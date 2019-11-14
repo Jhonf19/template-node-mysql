@@ -9,6 +9,7 @@
             {{!-- <li class="nav-item active">
                 <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
             </li> --}}
+            {{#if user}}
             <li class="nav-item active">
                 <a class="nav-link" href="/customers/add">Registro</a>
             </li>
@@ -16,8 +17,13 @@
                 <a class="nav-link" href="/customers">Clientes</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/sigin">Iniciar Sesion</a>
+                <a class="nav-link" href="/logout">Cerrar Session</a>
             </li>
+            {{else}}
+            <li class="nav-item active">
+                <a class="nav-link" href="/signin">Iniciar Sesion</a>
+            </li>
+            {{/if}}
         </ul>
     </div>
 </nav>
