@@ -38,6 +38,8 @@ app.use(express.json());
 //VARS GLOBAL
 app.use((req, res, next) => {
     app.locals.success = req.flash('success');
+    app.locals.danger = req.flash('danger');
+    app.locals.warning = req.flash('warning');
     next();
 });
 

@@ -22,15 +22,8 @@
 
     {{> navigation }}
 
-    {{#if success}}
-    <div class="alert alert-success alert-dismissible fade show my-alert" role="alert">
-        <strong>Bien hecho!</strong> {{success}}
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    {{/if}}
     <div class="container">
+        {{>msgs}}
 
         {{{ body }}}
 

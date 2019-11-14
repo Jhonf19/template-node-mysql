@@ -1,0 +1,19 @@
+.my-alert{
+    position: fixed;
+    z-index: 9999;
+    width: calc(100% / 3);
+    top: 50;
+    left: calc(100% / 3);
+    text-align: center;
+}
+
+
+@media only screen and (max-width: 600px) {
+    .my-alert{
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        top: 2;
+        left: 0;
+    }
+}

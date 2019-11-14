@@ -28,6 +28,7 @@ router.post('/add', async (req, res) => {
 router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
     await db.query('DELETE FROM customers WHERE id = ?', [id]);
+    req.flash('danger', 'Cliente eliminado');
     res.redirect('/customers');
     
 })
@@ -35,7 +36,6 @@ router.get('/delete/:id', async (req, res) => {
 router.get('/edit/:id', async (req, res) => {
     const { id } = req.params;
     const customer = await db.query('SELECT * FROM customers WHERE id = ?', [id]);
-    console.log(customer);
     res.render('customers/edit', { customer: customer[0] });
     
 })
@@ -44,6 +44,7 @@ router.post('/edit', async (req, res) => {
     const { id, name } = req.body;
     const customer = { name, state: 1 };
     await db.query('UPDATE customers set ? WHERE id = ?', [customer, id]);
+    req.flash('warning', 'Cliente editado');
     res.redirect('/customers');
     
 })

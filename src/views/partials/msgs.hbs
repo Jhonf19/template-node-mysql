@@ -1,0 +1,36 @@
+ {{#if success}}
+        <div class="row ">
+            <div class="col-md-6 offset-md-3">
+                <div class="alert alert-success alert-dismissible fade show  my-alert" role="alert">
+                    <strong>Bien hecho!</strong> {{success}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+ {{#if danger}}
+        <div class="row ">
+            <div class="col-md-6 offset-md-3">
+                <div class="alert alert-danger alert-dismissible fade show  my-alert" role="alert">
+                    <strong>Bien hecho!</strong> {{danger}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    {{/if}}
+ {{#if warning}}
+        <div class="row ">
+            <div class="col-md-6 offset-md-3">
+                <div class="alert alert-warning alert-dismissible fade show  my-alert" role="alert">
+                    <strong>Bien hecho!</strong> {{warning}}
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    {{/if}}
