@@ -21,16 +21,30 @@ router.post('/add', async (req, res) => {
 
     // console.log(customer.name);
     await db.query('INSERT INTO customers set ?', [customer]);
+    req.flash('success', 'Cliente agregado');
     res.redirect('/customers')
 })
 
 router.get('/delete/:id', async (req, res) => {
     const { id } = req.params;
-    const customer = await db.query('DELETE FROM customers WHERE ID = ?', [id]);
-    console.log(customer);
+    await db.query('DELETE FROM customers WHERE id = ?', [id]);
     res.redirect('/customers');
     
 })
 
+router.get('/edit/:id', async (req, res) => {
+    const { id } = req.params;
+    const customer = await db.query('SELECT * FROM customers WHERE id = ?', [id]);
+    console.log(customer);
+    res.render('customers/edit', { customer: customer[0] });
+    
+})
 
+router.post('/edit', async (req, res) => {
+    const { id, name } = req.body;
+    const customer = { name, state: 1 };
+    await db.query('UPDATE customers set ? WHERE id = ?', [customer, id]);
+    res.redirect('/customers');
+    
+})
 module.exports = router;
